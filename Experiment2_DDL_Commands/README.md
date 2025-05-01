@@ -105,15 +105,18 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/a0a5dc65-aa14-4bc7-994e-1d87088595a9)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+alter table Companies add designation varchar(50);
+alter table Companies add net_salary  number;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/96328f61-f270-45d2-b7b1-7acecadd7376)
+
 
 **Question 2**
 ---
