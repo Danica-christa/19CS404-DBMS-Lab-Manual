@@ -120,111 +120,157 @@ alter table Companies add net_salary  number;
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/bd4392f0-6be0-48b9-b1ca-531e1bf69e38)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+insert into Products(ProductID,Name,Category,Price,Stock) values(101,"Laptop","Electronics",1500,50);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/ba1c5b7c-ab64-40aa-aaec-8842f204c76f)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/99977b71-1c8d-4b3a-b8f5-80b1699f336c)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+create table Tasks(
+TaskID INTEGER,
+TaskName TEXT,
+DueDate DATE
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/b182a3bd-2fae-4758-b0a8-d5646331f000)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/7663d7c4-38aa-4fa6-9005-2f095f9e37f9)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+insert into Customers(CustomerID,Name,Address,City,ZipCode) values(302,"Laura Croft","456 Elm St","Seattle",98101);
+insert into Customers(CustomerID,Name,Address,City,ZipCode) values(303,"Bruce Wayne","789 Oak St","Gotham",10001);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/8828c730-1206-4736-904e-106412a9f87c)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/28cee191-46b3-445a-9cb3-671dd9d4f77b)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+insert into Books(ISBN, Title, Author, Publisher, YearPublished) select ISBN, Title, Author, Publisher, YearPublished from Out_of_print_books;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/b18cea2c-8dd1-49f7-9379-6e78f9ab9035)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/d4f27092-3f31-40b3-9105-72c23907f8b9)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+create table Department(
+DepartmentID INTEGER primary key,
+DepartmentName TEXT  unique  not NULL,
+Location  TEXT
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/2eb8ff67-0689-4ab4-b632-1d8ba21c7f03)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/a42531a1-c8b6-452f-a629-efc5dc76932a)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+create table item(
+item_id TEXT primary key,
+item_desc TEXT,
+rate INTEGER,
+icom_id TEXT,
+foreign key(icom_id) references company(com_id) on update set null on delete set null,
+check(length(icom_id)=4)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/09e67f32-2f32-48c3-9469-3676167aac0a)
+
 
 **Question 8**
----
--- Paste Question 8 here
+---![image](https://github.com/user-attachments/assets/c32fe6c1-9480-4ab1-9542-9914ba605bc7)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+create table item(
+item_id TEXT primary key,
+item_desc TEXT,
+rate INTEGER,
+icom_id TEXT,
+foreign key(icom_id) references company(com_id) on update cascade on delete cascade,
+check(length(icom_id)=4)
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/81c8380d-4c95-40e6-887a-9d53658d52c2)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/25f85000-a317-4c56-87d7-2be074c68a59)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+alter table Student_details add ParentsNumber number;
+alter table Student_details add Adhar_Number number;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/0dab410d-f53d-46fb-a632-a5d2446db961)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/54093773-2cb6-4eb7-84e8-ff6a44afcff3)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+create table contacts(
+contact_id INTEGER primary key,
+first_name TEXT not NULL,
+last_name TEXT not NULL,
+email TEXT,
+phone TEXT not NULL check(length(phone)=10)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/d114a18a-7678-4a0f-b16a-056925332f2e)
+
 
 
 ## RESULT
