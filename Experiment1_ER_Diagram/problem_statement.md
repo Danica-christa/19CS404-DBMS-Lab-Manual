@@ -45,28 +45,131 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
-
+# ER Diagram Submission - Vincy Jovitha V
 ## Scenario Chosen:
-University / Hospital (choose one)
+University 
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image](https://github.com/user-attachments/assets/003025b6-ccdd-4eb1-99e9-83d0be39f3b7)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+
+### STUDENT
+
+* Stu_id (PK)  
+* Full_name  
+* DOB  
+* Phone_no  
+* Email  
+* FK: Prog_id  
+
+### PROGRAM
+
+* Prog_id (PK)  
+* Prog_name  
+* FK: Dept_ID  
+
+### ENROLLMENT
+
+* Enroll_ID (PK)  
+* Enrollment_date  
+* FK: Stu_id  
+* FK: Course_id  
+
+### COURSE
+
+* Course_id (PK)  
+* Course_name  
+* Credit  
+* FK: Prog_id  
+* FK: Instructor_id  
+
+### DEPARTMENT
+
+* Dept_ID (PK)  
+* Dept_name  
+
+### INSTRUCTOR
+
+* Instructor_id (PK)  
+* Name  
+* Phone_no  
+* Email  
+* FK: Dept_ID  
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+### Relationships
 
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+* STUDENT — PROGRAM: Many to One  
+* PROGRAM — DEPARTMENT: Many to One  
+* STUDENT — COURSE: Many to Many (via ENROLLMENT)  
+* COURSE — INSTRUCTOR: Many to One  
+* INSTRUCTOR — DEPARTMENT: Many to One  
+* PROGRAM — COURSE: One to Many  
+* DEPARTMENT — INSTRUCTOR: One to Many  
+
+### Cardinality & Constraints
+
+* A student registers for exactly one program.  
+* A program belongs to one department.  
+* Each course is part of one program.  
+* Each course is taught by one instructor.  
+* Each instructor belongs to one department.  
+* A student can enroll in many courses, and a course can have many students (via ENROLLMENT).  
+* Enrollment entity holds the enrollment date and links a student to a course.  
+
+## Extension (Optional Enhancements):
+
+### Schedule Entity (Optional)
+
+#### New Entity: SCHEDULE
+
+* Attributes: ScheduleID (PK), Instructor_id (FK), Day, StartTime, EndTime  
+
+#### Relationship:
+
+* One Instructor → Many Schedules  
+
+### Justification:
+
+* Allows capturing detailed time availability per instructor.  
+
+## Design Justification:
+
+### Entity Choices and Justifications
+
+#### STUDENT
+
+* Captures individuals pursuing education.  
+* Attributes ensure identity, contact, and academic mapping.  
+
+#### PROGRAM
+
+* Represents the academic track a student is enrolled in.  
+* Linked to departments for structural clarity.  
+
+#### COURSE
+
+* Academic units under programs.  
+* Tied to instructors and enrollments.  
+
+#### ENROLLMENT
+
+* Resolves the many-to-many between students and courses.  
+* Tracks course enrollment events.  
+
+#### DEPARTMENT
+
+* Groups instructors and programs.  
+* Simplifies academic administration.  
+
+#### INSTRUCTOR
+
+* Faculty or teaching staff.  
+* Linked to courses and departments.  
 
 ## RESULT
+
+Successfully designed an ER diagram for the University Academic System with entities, relationships, constraints, and optional enhancements to support real-world academic operations.
