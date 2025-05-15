@@ -115,7 +115,8 @@ alter table Companies add net_salary  number;
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/96328f61-f270-45d2-b7b1-7acecadd7376)
+![image](https://github.com/user-attachments/assets/505dee91-b4ee-472e-a541-4bae6b55c2f8)
+
 
 
 **Question 2**
