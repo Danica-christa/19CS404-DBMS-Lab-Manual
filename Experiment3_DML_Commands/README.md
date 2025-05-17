@@ -47,15 +47,20 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+-- ![image](https://github.com/user-attachments/assets/da398e73-f5a5-4208-82f3-af13ecac6bf9)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+-- select Frequency, count(*) as
+TotalPrescriptions
+from Prescriptions
+group by Frequency;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/2333085f-ef5a-488b-a6ae-8a9680066c53)
+
 
 **Question 2**
 ---
