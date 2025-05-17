@@ -163,7 +163,8 @@ where name like 'A%';
 
 **Question 8**
 ---
--- ![image](https://github.com/user-attachments/assets/4c1c82cc-a5c2-4d17-b80c-9010d712d905)
+-- ![image](https://github.com/user-attachments/assets/b384e540-5b63-4f99-a131-ee23faa90f20)
+
 
 
 ```sql
@@ -175,13 +176,11 @@ having AVG(workhour) between 10 and 12;
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/dc3555ea-898b-4169-bf46-788a4fcff268)
-
+![image](https://github.com/user-attachments/assets/9bda6d35-c86e-4247-945e-8cccaf042a8a)
 
 **Question 9**
 ---
--- ![Uploading image.png…]()
-
+-- ![image](https://github.com/user-attachments/assets/1618feee-a1d5-47c9-b625-8653fe42375f)
 
 ```sql
 -- select jdate,SUM(workhour)
@@ -192,19 +191,26 @@ having SUM(workhour)>40;
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/c4f597d7-24d6-48b2-ac07-4827da5eaadd)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- ![image](https://github.com/user-attachments/assets/c29b7289-5edc-4729-a022-b74f450595ff)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+-- select category_id, SUM(price) as
+Total_Cost
+from products
+group by category_id
+having SUM(price) >50;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/9e97c791-0e8f-4af4-a6df-142e928bf6f4)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
