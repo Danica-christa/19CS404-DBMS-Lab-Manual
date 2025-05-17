@@ -47,169 +47,141 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- ![image](https://github.com/user-attachments/assets/da398e73-f5a5-4208-82f3-af13ecac6bf9)
+-- ![image](https://github.com/user-attachments/assets/c8ed2c96-971a-4afa-8aef-6ceaa8ee73aa)
 
 
 ```sql
--- select Frequency, count(*) as
-TotalPrescriptions
-from Prescriptions
-group by Frequency;
+-- update PRODUCTS set reorder_lvl=40 where category='Grocery';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/2333085f-ef5a-488b-a6ae-8a9680066c53)
+![image](https://github.com/user-attachments/assets/8fc512c5-3539-4a51-86cb-98a52d113cb3)
 
 
 **Question 2**
 ---
--- ![image](https://github.com/user-attachments/assets/70eda5b4-92bb-4e65-a874-3f65e2ceb366)
+-- ![image](https://github.com/user-attachments/assets/ff56cb5d-2aa7-4324-a928-17d99a92fe0a)
 
 
 ```sql
---select Specialty,Gender,count(*) as
-TotalDoctors
-from Doctors
-group by Specialty,Gender;
+-- update Products set sell_price=sell_price*1.15 where quantity<50 and supplier_id=10;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/38e9fcad-ce81-4d20-ae61-b121ae8298bb)
+![image](https://github.com/user-attachments/assets/205e43f4-b346-4cc8-812f-2daa44ff44ce)
 
 
 **Question 3**
 ---
--- ![image](https://github.com/user-attachments/assets/96118ec6-067e-4bc9-ab63-2a34c6abda58)
+-- ![image](https://github.com/user-attachments/assets/61076362-5534-4f85-8a68-97e57aa54527)
 
 
 ```sql
--- select InsuranceCompany, count(distinct PatientID) as
-TotalPatients
-from Insurance
-group by InsuranceCompany;
+-- update products set reorder_lvl=reorder_lvl*1.30 where category='Food' and quantity<(reorder_lvl*0.5) ;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/79ef665d-fd03-412b-903e-5f08d5c8dfa0)
+![image](https://github.com/user-attachments/assets/36808404-880d-46a7-aa00-f5f3c6bc418c)
 
 
 **Question 4**
 ---
--- ![image](https://github.com/user-attachments/assets/cf5d53b4-8a56-4f3e-a0f9-b278483a9304)
+-- ![image](https://github.com/user-attachments/assets/db61b07a-5fb0-4c9d-8abd-1b576723145c)
 
 
 ```sql
--- select count(*) as
-employees_count
-from employee
-where income >50000;
+-- update Products set quantity=quantity*1.10;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/4f95afd9-7791-4e3d-9b3a-4d22ebc9adc8)
+![image](https://github.com/user-attachments/assets/adf7e262-d139-4227-ac46-8d0e6503e8fa)
 
 
 **Question 5**
 ---
--- ![image](https://github.com/user-attachments/assets/50bf1984-818e-4ef8-abde-07bd1e8cdddc)
+-- ![image](https://github.com/user-attachments/assets/b2bc4d0c-a266-4de0-af7b-0cbd4c447d33)
 
 
 ```sql
--- select count(distinct salesman_id) as
-COUNT
-from orders;
+-- update Products set reorder_lvl=20 where quantity<10 and category='Snacks';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/ccbaabf1-f389-46b0-a817-0fe1a490d94e)
+![image](https://github.com/user-attachments/assets/500c4db6-b435-4bd2-aa43-280d513f7929)
 
 
 **Question 6**
 ---
--- ![image](https://github.com/user-attachments/assets/23eb269e-577c-4bc0-8add-0cfdac80cccf)
+-- ![image](https://github.com/user-attachments/assets/8d631881-9048-4c23-845f-5447d904770f)
 
 
 ```sql
--- select count(*) as COUNT
-from customer
-where city='Noida';
+-- delete from Customer where WORKING_AREA='New York';
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/ba1b4415-9d8e-4748-806a-894daeb82e79)
+![image](https://github.com/user-attachments/assets/e452fb49-d3d7-4643-8620-0d7a07be37bc)
 
 
 **Question 7**
 ---
--- ![image](https://github.com/user-attachments/assets/cabc5ed3-d895-48f3-a309-6a4a6ebb268a)
+-- ![image](https://github.com/user-attachments/assets/2dc1d0ab-9dea-4ac0-a94e-3856e0b55769)
 
 
 ```sql
--- select AVG(income) as avg_income
-from employee
-where name like 'A%';
+-- delete from Customer where GRADE=3 and CUST_NAME like '%BBB%' and PAYMENT_AMT >2000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/d0274477-8b3e-49d0-8ff7-4c96dc7f281d)
+![image](https://github.com/user-attachments/assets/072f101d-5a43-49af-8518-8af10322e8c6)
 
 
 **Question 8**
 ---
--- ![image](https://github.com/user-attachments/assets/b384e540-5b63-4f99-a131-ee23faa90f20)
-
+-- ![image](https://github.com/user-attachments/assets/37796a55-a562-4354-8e38-44955d2763ce)
 
 
 ```sql
--- select occupation, AVG(workhour)
-from employee1
-group by occupation
-having AVG(workhour) between 10 and 12;
+-- delete from Customer where OPENING_AMT between 4000 and 6000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/9bda6d35-c86e-4247-945e-8cccaf042a8a)
+![image](https://github.com/user-attachments/assets/6e5cd051-40ac-43ff-8f53-d543cc02d9ec)
+
 
 **Question 9**
 ---
--- ![image](https://github.com/user-attachments/assets/1618feee-a1d5-47c9-b625-8653fe42375f)
+-- ![image](https://github.com/user-attachments/assets/358305df-06be-42aa-9cf8-df85dd8cbc4e)
 
 ```sql
--- select jdate,SUM(workhour)
-from employee1
-group by jdate
-having SUM(workhour)>40;
+-- delete from Customer where CUST_CITY <> 'New York' and OUTSTANDING_AMT>5000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/c4f597d7-24d6-48b2-ac07-4827da5eaadd)
+![image](https://github.com/user-attachments/assets/e32c1d1d-28d4-411f-85e8-3488d78806c5)
 
 
 **Question 10**
 ---
--- ![image](https://github.com/user-attachments/assets/c29b7289-5edc-4729-a022-b74f450595ff)
+-- ![image](https://github.com/user-attachments/assets/80bec1b7-c573-405e-a4f1-7c866508b665)
 
 
 ```sql
--- select category_id, SUM(price) as
-Total_Cost
-from products
-group by category_id
-having SUM(price) >50;
+-- delete from Customer where (GRADE=3 or AGENT_CODE='A008') and OUTSTANDING_AMT<5000;
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/9e97c791-0e8f-4af4-a6df-142e928bf6f4)
+![image](https://github.com/user-attachments/assets/21f4db31-cb75-4d9c-afcf-41fe3dadc2d7)
 
 
 ## RESULT
