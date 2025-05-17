@@ -35,126 +35,171 @@ FROM table_name
 GROUP BY column_name
 HAVING condition;
 ```
-
 **Question 1**
 --
--- Paste Question 1 here
+-- ![image](https://github.com/user-attachments/assets/da398e73-f5a5-4208-82f3-af13ecac6bf9)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+-- select Frequency, count(*) as
+TotalPrescriptions
+from Prescriptions
+group by Frequency;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/2333085f-ef5a-488b-a6ae-8a9680066c53)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- ![image](https://github.com/user-attachments/assets/70eda5b4-92bb-4e65-a874-3f65e2ceb366)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+--select Specialty,Gender,count(*) as
+TotalDoctors
+from Doctors
+group by Specialty,Gender;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/38e9fcad-ce81-4d20-ae61-b121ae8298bb)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- ![image](https://github.com/user-attachments/assets/96118ec6-067e-4bc9-ab63-2a34c6abda58)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+-- select InsuranceCompany, count(distinct PatientID) as
+TotalPatients
+from Insurance
+group by InsuranceCompany;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/79ef665d-fd03-412b-903e-5f08d5c8dfa0)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- ![image](https://github.com/user-attachments/assets/cf5d53b4-8a56-4f3e-a0f9-b278483a9304)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+-- select count(*) as
+employees_count
+from employee
+where income >50000;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/4f95afd9-7791-4e3d-9b3a-4d22ebc9adc8)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- ![image](https://github.com/user-attachments/assets/50bf1984-818e-4ef8-abde-07bd1e8cdddc)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+-- select count(distinct salesman_id) as
+COUNT
+from orders;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/ccbaabf1-f389-46b0-a817-0fe1a490d94e)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- ![image](https://github.com/user-attachments/assets/23eb269e-577c-4bc0-8add-0cfdac80cccf)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+-- select count(*) as COUNT
+from customer
+where city='Noida';
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/ba1b4415-9d8e-4748-806a-894daeb82e79)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- ![image](https://github.com/user-attachments/assets/cabc5ed3-d895-48f3-a309-6a4a6ebb268a)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+-- select AVG(income) as avg_income
+from employee
+where name like 'A%';
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/d0274477-8b3e-49d0-8ff7-4c96dc7f281d)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- ![image](https://github.com/user-attachments/assets/b384e540-5b63-4f99-a131-ee23faa90f20)
+
+
 
 ```sql
--- Paste your SQL code below for Question 8
+-- select occupation, AVG(workhour)
+from employee1
+group by occupation
+having AVG(workhour) between 10 and 12;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/9bda6d35-c86e-4247-945e-8cccaf042a8a)
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- ![image](https://github.com/user-attachments/assets/1618feee-a1d5-47c9-b625-8653fe42375f)
 
 ```sql
--- Paste your SQL code below for Question 9
+-- select jdate,SUM(workhour)
+from employee1
+group by jdate
+having SUM(workhour)>40;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/c4f597d7-24d6-48b2-ac07-4827da5eaadd)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- ![image](https://github.com/user-attachments/assets/c29b7289-5edc-4729-a022-b74f450595ff)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+-- select category_id, SUM(price) as
+Total_Cost
+from products
+group by category_id
+having SUM(price) >50;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/9e97c791-0e8f-4af4-a6df-142e928bf6f4)
 
 
 ## RESULT
