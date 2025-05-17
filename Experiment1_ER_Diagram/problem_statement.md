@@ -53,122 +53,102 @@ University
 ![image](https://github.com/user-attachments/assets/003025b6-ccdd-4eb1-99e9-83d0be39f3b7)
 
 
-## Entities and Attributes:
+Entities and Attributes
+## STUDENT
+Attributes:
 
-### STUDENT
+admission number
 
-* Stu_id (PK)  
-* Full_name  
-* DOB  
-* Phone_no  
-* Email  
-* FK: Prog_id  
+full name
 
-### PROGRAM
+date of birth
 
-* Prog_id (PK)  
-* Prog_name  
-* FK: Dept_ID  
+contact information:
 
-### ENROLLMENT
+email
 
-* Enroll_ID (PK)  
-* Enrollment_date  
-* FK: Stu_id  
-* FK: Course_id  
+phone number
 
-### COURSE
+## INSTRUCTOR
+Attributes:
 
-* Course_id (PK)  
-* Course_name  
-* Credit  
-* FK: Prog_id  
-* FK: Instructor_id  
+unique staff number
 
-### DEPARTMENT
+name
 
-* Dept_ID (PK)  
-* Dept_name  
+contact information:
 
-### INSTRUCTOR
+email
 
-* Instructor_id (PK)  
-* Name  
-* Phone_no  
-* Email  
-* FK: Dept_ID  
+phone number
 
-## Relationships and Constraints:
+## COURSES
+Attributes:
 
-### Relationships
+course number
 
-* STUDENT — PROGRAM: Many to One  
-* PROGRAM — DEPARTMENT: Many to One  
-* STUDENT — COURSE: Many to Many (via ENROLLMENT)  
-* COURSE — INSTRUCTOR: Many to One  
-* INSTRUCTOR — DEPARTMENT: Many to One  
-* PROGRAM — COURSE: One to Many  
-* DEPARTMENT — INSTRUCTOR: One to Many  
+name
 
-### Cardinality & Constraints
+number of credits/units
 
-* A student registers for exactly one program.  
-* A program belongs to one department.  
-* Each course is part of one program.  
-* Each course is taught by one instructor.  
-* Each instructor belongs to one department.  
-* A student can enroll in many courses, and a course can have many students (via ENROLLMENT).  
-* Enrollment entity holds the enrollment date and links a student to a course.  
+## PROGRAMS
+Attributes:
 
-## Extension (Optional Enhancements):
+unique identifier
 
-### Schedule Entity (Optional)
+program name
 
-#### New Entity: SCHEDULE
+the governing department
 
-* Attributes: ScheduleID (PK), Instructor_id (FK), Day, StartTime, EndTime  
+## PREREQUISITE
+Attributes:
 
-#### Relationship:
+PrerequisiteID
 
-* One Instructor → Many Schedules  
+Course_ID
 
-### Justification:
+Relationships and Constraints
+## enrolls
+Entities Involved: STUDENT ↔ COURSES
 
-* Allows capturing detailed time availability per instructor.  
+Cardinality: Many-to-Many
 
-## Design Justification:
+Participation: Partial
 
-### Entity Choices and Justifications
+## taught
+Entities Involved: INSTRUCTOR ↔ COURSES
 
-#### STUDENT
+Cardinality: Many-to-Many
 
-* Captures individuals pursuing education.  
-* Attributes ensure identity, contact, and academic mapping.  
+Participation: Partial
 
-#### PROGRAM
+## offers
+Entities Involved: PROGRAMS → COURSES
 
-* Represents the academic track a student is enrolled in.  
-* Linked to departments for structural clarity.  
+Cardinality: One-to-Many (One program offers many courses)
 
-#### COURSE
+Participation: Total on COURSES side
 
-* Academic units under programs.  
-* Tied to instructors and enrollments.  
+## to check
+Entities Involved: PREREQUISITE → COURSES
 
-#### ENROLLMENT
+Cardinality: Many-to-One
 
-* Resolves the many-to-many between students and courses.  
-* Tracks course enrollment events.  
+Participation: Partial
 
-#### DEPARTMENT
+Extension: Prerequisite
+The PREREQUISITE entity models prerequisites separately instead of using a recursive relationship on COURSES.
 
-* Groups instructors and programs.  
-* Simplifies academic administration.  
+This allows each course to reference multiple prerequisites and enables storing extra metadata in the future (e.g., minimum grade required, reason for prerequisite).
 
-#### INSTRUCTOR
+Design Choices
+Separate Entities: Each core concept (Student, Instructor, Program, Course) is modeled independently to reflect real-world roles clearly.
 
-* Faculty or teaching staff.  
-* Linked to courses and departments.  
+Composite Attribute (Contact Information): Groups email and phone logically, avoiding data repetition.
+
+Separate PREREQUISITE Entity: Improves clarity and flexibility, supports expansion (e.g., allowing prerequisites for programs or different course levels).
+
+Clear Relationship Naming: Relationships like enrolls, taught, and offers make the model easier to understand. 
 
 ## RESULT
 
